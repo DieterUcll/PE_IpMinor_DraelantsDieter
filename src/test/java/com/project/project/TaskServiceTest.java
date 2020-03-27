@@ -2,15 +2,18 @@ package com.project.project;
 
 import com.project.project.dto.TaskDTO;
 import com.project.project.model.Task;
+import com.project.project.repository.TaskRepo;
 import com.project.project.service.TaskService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 public class TaskServiceTest {
 
     @Autowired
