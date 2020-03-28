@@ -49,7 +49,10 @@ public class SubTask {
         return corsTask;
     }
 
-    public void setCorsTask(long corsTask) {
+    public void setCorsTask(Long corsTask) {
+        if(corsTask == null) {
+            throw new IllegalArgumentException("corsTask is null");
+        }
         this.corsTask = corsTask;
     }
 

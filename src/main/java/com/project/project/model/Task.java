@@ -94,6 +94,9 @@ public class Task {
         return id;
     }
     public void setId(Long id) {
+        if(id == null) {
+            throw new IllegalArgumentException("id is wrong");
+        }
         this.id = id;
     }
 
@@ -101,6 +104,9 @@ public class Task {
         return subtasks;
     }
     public void setSubtasks(List<SubTask> subTasks) {
+        if(subTasks == null) {
+            throw new IllegalArgumentException("empty parameter");
+        }
         this.subtasks = subTasks;
     }
 }
