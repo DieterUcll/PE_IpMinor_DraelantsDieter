@@ -31,7 +31,7 @@ public class Task {
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("': due ' MMMM d',' YYYY 'at' h:mm a").withLocale(Locale.US);
 
 //Default constructor
-    public Task() { };
+    public Task() { }
     public Task(String title, String description, LocalDateTime dueDate) {
         setTitle(title);
         setDescription(description);
