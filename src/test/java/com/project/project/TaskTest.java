@@ -1,8 +1,14 @@
 package com.project.project;
 
+import com.project.project.model.SubTask;
 import com.project.project.model.Task;
 import org.junit.*;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -62,5 +68,43 @@ public class TaskTest {
     }
 
 
+    //Set due date Test
+    @Test
+    public void setDueDateCorrect() {
+        Task t = new Task();
 
+        t.setDueDate(LocalDateTime.of(2002,1,2,3,3));
+
+        assertNotNull(t.getDueDate());
+        assertNotEquals(" ", t.getDueDate());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void setDueDateEmpty() {
+        Task t = new Task();
+
+        t.setDueDate(null);
+    }
+
+    //Subtask list Tests
+    @Test
+    public void setSubTasksListCorrect() {
+        Task t = new Task();
+
+        List<SubTask> list = new ArrayList<>();
+
+        t.setSubtasks(list);
+
+        assertNotNull(t.getSubtasks());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void setSubTaskListNull() {
+        Task t = new Task();
+
+        List<SubTask> list = null;
+
+        t.setSubtasks(list);
+
+    }
 }
