@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class TaskTest {
 
-
+    //Title Tests
     @Test
     public void setTitleCorrect() {
         Task t = new Task();
@@ -33,6 +33,32 @@ public class TaskTest {
         Task t = new Task();
 
         t.setTitle("     ");
+    }
+
+    //Description Tests
+    @Test
+    public void setDescriptionCorrect() {
+        Task t = new Task();
+
+        t.setDescription("ingevuld");
+
+        assertNotNull(t.getDescription());
+        assertNotEquals(" ", t.getDescription());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void setDescriptionEmpty() {
+        Task t = new Task();
+        String man = null;
+
+        t.setDescription(man);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void setDescriptionSpaces() {
+        Task t = new Task();
+
+        t.setDescription("     ");
     }
 
 
