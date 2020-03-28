@@ -1,7 +1,7 @@
 package com.project.project;
 
 import com.project.project.model.Task;
-import org.junit.jupiter.api.Test;
+import org.junit.*;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,24 +20,19 @@ public class TaskTest {
         assertNotEquals(" ", t.getTitle());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void setTitleEmpty() {
         Task t = new Task();
         String man = null;
 
         t.setTitle(man);
-        assertNull(t.getTitle());
-
-
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void setTitleSpaces() {
         Task t = new Task();
 
         t.setTitle("     ");
-        assertNull(t.getTitle());
-
     }
 
 
