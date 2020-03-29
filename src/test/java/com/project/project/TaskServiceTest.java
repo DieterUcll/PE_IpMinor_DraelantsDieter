@@ -92,7 +92,6 @@ public class TaskServiceTest {
         subTask.setDescription("rff");
         subTask.setCorsTask((long) 1);
 
-
         taskService.addSubTaskToTask(subTask);
 
         assertEquals(1,taskService.getTaskById(1).getSubtasks().size());
