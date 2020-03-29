@@ -24,13 +24,17 @@ public class TaskServiceTest {
         TaskDTO taskDTO = new TaskDTO();
         taskDTO.setTitle("task1");
         taskDTO.setDescription("descri");
-        taskDTO.setDueDate(LocalDateTime.now());
+        taskDTO.setDueDate(LocalDateTime.of(2,2,2,1,1));
         taskService.addTask(taskDTO);
 
         //method to be tested
         List<Task> tasks = taskService.getAllTasks();
 
         //Checks
+        assertEquals("task1", taskDTO.getTitle());
+        assertEquals("descri", taskDTO.getDescription());
+        assertEquals(LocalDateTime.of(2,2,2,1,1), taskDTO.getDueDate());
+
         assertNotNull(tasks);
         assertFalse(tasks.isEmpty());
         assertEquals(1, tasks.size());
