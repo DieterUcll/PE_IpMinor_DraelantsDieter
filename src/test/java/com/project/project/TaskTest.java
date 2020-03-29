@@ -61,8 +61,7 @@ public class TaskTest {
         Task t = new Task();
         String man = null;
 
-        t.setDescription(man);
-        t.setTitle("     ");
+        assertThrows(IllegalArgumentException.class, () ->t.setDescription(man));
     }
 
     @Test
@@ -88,7 +87,7 @@ public class TaskTest {
     public void setDueDateEmpty() {
         Task t = new Task();
 
-        t.setDueDate(null);
+        assertThrows(IllegalArgumentException.class, () ->t.setDueDate(null));
     }
 
     //Subtask list Tests
@@ -109,7 +108,7 @@ public class TaskTest {
 
         List<SubTask> list = null;
 
-        t.setSubtasks(list);
+        assertThrows(IllegalArgumentException.class, () ->t.setSubtasks(list));
 
     }
 }

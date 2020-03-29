@@ -25,14 +25,14 @@ public class SubTaskTest {
         SubTask t = new SubTask();
         String man = null;
 
-        t.setTitle(man);
+        assertThrows(IllegalArgumentException.class, () ->t.setTitle(man));
     }
 
     @Test
     public void setTitleSpaces() {
         SubTask t = new SubTask();
 
-        t.setTitle("     ");
+        assertThrows(IllegalArgumentException.class, () ->t.setTitle("     "));
     }
 
     //Description Tests
@@ -51,14 +51,14 @@ public class SubTaskTest {
         SubTask t = new SubTask();
         String man = null;
 
-        t.setDescription(man);
+        assertThrows(IllegalArgumentException.class, () ->t.setDescription(man));
     }
 
     @Test
     public void setDescriptionSpaces() {
         SubTask t = new SubTask();
 
-        t.setDescription("     ");
+        assertThrows(IllegalArgumentException.class, () ->t.setDescription("     "));
     }
 
 }
