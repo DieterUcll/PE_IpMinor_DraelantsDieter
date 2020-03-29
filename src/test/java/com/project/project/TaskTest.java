@@ -2,7 +2,9 @@ package com.project.project;
 
 import com.project.project.model.SubTask;
 import com.project.project.model.Task;
-import org.junit.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
@@ -26,15 +28,15 @@ public class TaskTest {
         assertNotEquals(" ", t.getTitle());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setTitleEmpty() {
         Task t = new Task();
         String man = null;
 
-        t.setTitle(man);
+        assertThrows(IllegalArgumentException.class, () ->t.setTitle(man));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setTitleSpaces() {
         Task t = new Task();
 
@@ -52,7 +54,7 @@ public class TaskTest {
         assertNotEquals(" ", t.getDescription());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setDescriptionEmpty() {
         Task t = new Task();
         String man = null;
@@ -60,7 +62,7 @@ public class TaskTest {
         t.setDescription(man);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setDescriptionSpaces() {
         Task t = new Task();
 
@@ -79,7 +81,7 @@ public class TaskTest {
         assertNotEquals(" ", t.getDueDate());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setDueDateEmpty() {
         Task t = new Task();
 
@@ -98,7 +100,7 @@ public class TaskTest {
         assertNotNull(t.getSubtasks());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setSubTaskListNull() {
         Task t = new Task();
 

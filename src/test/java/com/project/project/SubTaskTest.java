@@ -1,14 +1,8 @@
 package com.project.project;
 
 import com.project.project.model.SubTask;
-import com.project.project.model.Task;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -26,7 +20,7 @@ public class SubTaskTest {
         assertNotEquals(" ", t.getTitle());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setTitleEmpty() {
         SubTask t = new SubTask();
         String man = null;
@@ -34,7 +28,7 @@ public class SubTaskTest {
         t.setTitle(man);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setTitleSpaces() {
         SubTask t = new SubTask();
 
@@ -52,7 +46,7 @@ public class SubTaskTest {
         assertNotEquals(" ", t.getDescription());
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setDescriptionEmpty() {
         SubTask t = new SubTask();
         String man = null;
@@ -60,7 +54,7 @@ public class SubTaskTest {
         t.setDescription(man);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void setDescriptionSpaces() {
         SubTask t = new SubTask();
 
