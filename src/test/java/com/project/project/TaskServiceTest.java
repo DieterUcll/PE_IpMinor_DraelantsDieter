@@ -40,4 +40,15 @@ public class TaskServiceTest {
         assertEquals(1, tasks.size());
         assertNotNull(taskDTO);
     }
+
+    @Test
+    public void testGetTaskById() {
+        TaskDTO taskDTO = new TaskDTO();
+        taskDTO.setTitle("task1");
+        taskDTO.setDescription("descri");
+        taskDTO.setDueDate(LocalDateTime.of(2,2,2,1,1));
+        taskService.addTask(taskDTO);
+
+        assertEquals(1,taskService.getTaskById(1).getId());
+    }
 }
