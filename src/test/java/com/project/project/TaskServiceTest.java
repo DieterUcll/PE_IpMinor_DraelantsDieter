@@ -81,6 +81,7 @@ public class TaskServiceTest {
     @Test
     public void testAddSubtaskToTask() {
         TaskDTO taskDTO = new TaskDTO();
+        taskDTO.setId(1);
         taskDTO.setTitle("task1");
         taskDTO.setDescription("descri");
         taskDTO.setDueDate(LocalDateTime.of(2,2,2,1,1));
