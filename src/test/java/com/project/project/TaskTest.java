@@ -40,7 +40,9 @@ public class TaskTest {
     public void setTitleSpaces() {
         Task t = new Task();
 
-        t.setTitle("     ");
+
+        assertThrows(IllegalArgumentException.class, () ->t.setTitle("     "));
+
     }
 
     //Description Tests
@@ -60,13 +62,14 @@ public class TaskTest {
         String man = null;
 
         t.setDescription(man);
+        t.setTitle("     ");
     }
 
     @Test
     public void setDescriptionSpaces() {
         Task t = new Task();
 
-        t.setDescription("     ");
+        assertThrows(IllegalArgumentException.class, () ->t.setDescription("     "));
     }
 
 
