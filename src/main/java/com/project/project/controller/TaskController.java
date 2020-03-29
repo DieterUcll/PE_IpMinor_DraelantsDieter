@@ -30,7 +30,7 @@ public class TaskController {
 
     @RequestMapping("/tasks")
     public ModelAndView getTasks() {
-        var a = new ModelAndView("tasks");
+        ModelAndView a = new ModelAndView("tasks");
         a.addObject("tasks", taskService.getAllTasks());
         System.out.println(taskService.getAllTasks().toString());
         return a;
@@ -39,7 +39,7 @@ public class TaskController {
     @RequestMapping("/tasks/{id}")
     public ModelAndView getTaskDetail(@PathVariable(name = "id") int taskId) {
 
-        var a = new ModelAndView("taskDetail");
+        ModelAndView a = new ModelAndView("taskDetail");
         a.addObject("detail", taskService.getTaskById(taskId));
         System.out.println("Detail load:" + taskService.getTaskById(taskId).getSubtasks().toString());
         return a;
@@ -59,7 +59,7 @@ public class TaskController {
     //Edit handle
     @RequestMapping("/tasks/edit/{id}")
     public ModelAndView getEditForm(@PathVariable(name = "id") int taskId) {
-        var a = new ModelAndView("editPage");
+        ModelAndView a = new ModelAndView("editPage");
         a.addObject("task", taskService.getTaskById(taskId));
         return a;
     }
@@ -73,7 +73,7 @@ public class TaskController {
     //Subtask handle shit
     @RequestMapping("/tasks/{id}/sub/create")
     public ModelAndView getCreateSubForm(@PathVariable(name = "id") int taskId) {
-        var a = new ModelAndView("createSub");
+        ModelAndView a = new ModelAndView("createSub");
         a.addObject("task", taskService.getTaskById(taskId));
         return a;
     }
