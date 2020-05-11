@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.project.project.TaskServiceTest
--------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.57 s <<< FAILURE! - in com.project.project.TaskServiceTest
-testAddSubtaskToTask  Time elapsed: 0.043 s  <<< ERROR!
-javax.persistence.EntityNotFoundException: Unable to find com.project.project.model.Task with id 1
-	at com.project.project.TaskServiceTest.testAddSubtaskToTask(TaskServiceTest.java:95)
-
