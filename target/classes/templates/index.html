@@ -18,5 +18,18 @@
 <h4>YYEEEEEEEEEt</h4>
 <img src="https://ruinmyweek.com/wp-content/uploads/2020/01/coronavirus-memes-1.jpg" alt="fanny pic xd"/>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#locales").change(function () {
+            var selectedOption = $('#locales').val();
+            if (selectedOption != ''){
+                window.location.replace('/?lang=' + selectedOption);
+            }
+        });
+    });
+</script>
+
 </body>
 </html>

@@ -7,9 +7,9 @@
 <header>
     <nav>
         <ul>
-           <li><a th:href="@{/}">Home</a></li>
-            <li><a th:href="@{/taskForm}">Add Task</a></li>
-            <li><a th:href="@{/tasks}">Task Overview</a></li>
+           <li><a th:href="@{/}" th:text="#{header.home}"></a></li>
+            <li><a th:href="@{/taskForm}" th:text="#{header.addTask}"></a></li>
+            <li><a th:href="@{/tasks}" th:text="#{header.overview}"></a></li>
         </ul>
     </nav>
 </header>
