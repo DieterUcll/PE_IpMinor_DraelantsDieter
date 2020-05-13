@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Create Task</title>
 </head>
+<div th:include="header.html"></div>
 <body>
 <span th:text="#{lang.change}"></span>:
 <select id="locales">
@@ -29,7 +30,7 @@
         $("#locales").change(function () {
             var selectedOption = $('#locales').val();
             if (selectedOption != ''){
-                window.location.replace('/?lang=' + selectedOption);
+                window.location.replace('/taskForm?lang=' + selectedOption);
             }
         });
     });
