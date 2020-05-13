@@ -2,13 +2,13 @@
 <html lang=en xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <title th:text="#{index.title}"></title>
 </head>
 <div th:include="header.html"></div>
 <body>
 
 
-<h2 th:text="#{greeting}"></h2>
+<h2 th:text="#{index.greeting}"></h2>
 <span th:text="#{lang.change}"></span>:
 <select id="locales">
     <option value=""></option>

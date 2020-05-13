@@ -2,15 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Task List</title>
+    <title th:text="#{task.title}"></title>
 </head>
 <body>
-<h2>TASKS</h2>
+<h2 th:text="#{tasks.h2}"></h2>
 <ul th:if="${tasks != null}">
     <li th:each="task : ${tasks}">
         <a th:text="${task.taskFull}"></a>
     </li>
 </ul>
-<<span th:unless="${tasks != null}">No tasks left to do</span>
+<span th:unless="${tasks == null}" th:text="#{tasks.empty}"></span>
 </body>
 </html>

@@ -7,13 +7,13 @@
 <body>
 
 <form action="/new" method="post">
-    <label for="title">Title:</label><br>
+    <label for="title" th:text="#{taskForm.title}"></label><br>
     <input type="text" id="title" name="title" value=""><br>
-    <label for="description">Description:</label><br>
+    <label for="description" th:text="#{taskForm.description}"></label><br>
     <input type="text" id="description" name="description" value=""><br>
-    <label for="date">Due Date:</label><br>
+    <label for="date" th:text="#{taskForm.dueDate}"></label><br>
     <input type="datetime-local" id="date" name="dueDate" value=""><br>
-    <input type="submit" value="Submit">
+    <input type="submit" th:value="#{taskForm.button}">
 </form>
 
 </body>
