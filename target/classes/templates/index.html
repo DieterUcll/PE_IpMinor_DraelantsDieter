@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=en xmlns:th="http://www.thymeleaf.org" >
+<html lang=en xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title th:text="#{index.title}"></title>
@@ -7,29 +7,31 @@
 <div th:include="header.html"></div>
 <body>
 
+<div th:fragment="languageChange">
+    <span th:text="#{lang.change}"></span>:
+    <select id="locales">
+        <option value=""></option>
+        <option value="en" th:text="#{lang.eng}"></option>
+        <option value="nl" th:text="#{lang.nl}"></option>
+    </select>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#locales").change(function () {
+                var selectedOption = $('#locales').val();
+                if (selectedOption != '') {
+                    window.location.replace('?lang=' + selectedOption);
+                }
+            });
+        });
+    </script>
+</div>
 
 <h2 th:text="#{index.greeting}"></h2>
-<span th:text="#{lang.change}"></span>:
-<select id="locales">
-    <option value=""></option>
-    <option value="en" th:text="#{lang.eng}"></option>
-    <option value="nl" th:text="#{lang.nl}"></option>
-</select>
+
 <h4>YYEEEEEEEEEt</h4>
 <img src="https://ruinmyweek.com/wp-content/uploads/2020/01/coronavirus-memes-1.jpg" alt="fanny pic xd"/>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-</script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("#locales").change(function () {
-            var selectedOption = $('#locales').val();
-            if (selectedOption != ''){
-                window.location.replace('/?lang=' + selectedOption);
-            }
-        });
-    });
-</script>
 
 </body>
 </html>

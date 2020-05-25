@@ -2,21 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Task Detail</title>
+    <title th:text="#{taskDetail.title}"></title>
 </head>
 <body>
-<h2>TASKS Detail</h2>
+<div th:insert="~{index :: languageChange}"></div>
+<br>
+<h2 th:text="#{taskDetail.h2}"></h2>
 <table th:object="${detail}">
     <tr>
-        <th>Title:</th>
+        <th th:text="#{form.formTitle}"></th>
         <td th:text="*{title}"></td>
     </tr>
     <tr>
-        <th>Description:</th>
+        <th th:text="#{form.description}"></th>
         <td th:text="*{description}"></td>
     </tr>
     <tr>
-        <th>Due Date:</th>
+        <th th:text="#{form.dueDate}"></th>
         <td th:text="*{dueDateFormatted}"></td>
     </tr>
 </table>

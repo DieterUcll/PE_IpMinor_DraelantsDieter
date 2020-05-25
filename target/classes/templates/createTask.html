@@ -2,40 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Create Task</title>
+    <title th:text="#{taskForm.title}"></title>
 </head>
 <div th:include="header.html"></div>
 <body>
-<span th:text="#{lang.change}"></span>:
-<select id="locales">
-    <option value=""></option>
-    <option value="en" th:text="#{lang.eng}"></option>
-    <option value="nl" th:text="#{lang.nl}"></option>
-</select>
+<div th:insert="~{index :: languageChange}"></div><br>
 
+<h2 th:text="#{taskForm.h2}"></h2>
 <form action="/new" method="post">
-    <label for="title" th:text="#{taskForm.title}"></label><br>
+    <label for="title" th:text="#{form.formTitle}"></label><br>
     <input type="text" id="title" name="title" value=""><br>
-    <label for="description" th:text="#{taskForm.description}"></label><br>
+    <label for="description" th:text="#{form.description}"></label><br>
     <input type="text" id="description" name="description" value=""><br>
-    <label for="date" th:text="#{taskForm.dueDate}"></label><br>
+    <label for="date" th:text="#{form.dueDate}"></label><br>
     <input type="datetime-local" id="date" name="dueDate" value=""><br>
     <input type="submit" th:value="#{taskForm.button}">
 </form>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-</script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("#locales").change(function () {
-            var selectedOption = $('#locales').val();
-            if (selectedOption != ''){
-                window.location.replace('/taskForm?lang=' + selectedOption);
-            }
-        });
-    });
-</script>
-
 
 </body>
 </html>

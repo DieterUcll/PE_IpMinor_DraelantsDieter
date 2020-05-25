@@ -2,18 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Task</title>
+    <title th:text="#{editTask.title}">k</title>
 </head>
 <body>
+<div th:insert="~{index :: languageChange}"></div>
+<br>
+<h2 th:text="#{editTask.h2}"></h2>
+
 <form action="/tasks/edit/change" method="post" th:object="${task}">
     <input type="hidden" name="id" th:value="*{id}">
-    <label for="title">Title:</label><br>
+    <label for="title" th:text="#{form.formTitle}">Title:</label><br>
     <input type="text" id="title" name="title" th:value="*{title}"><br>
-    <label for="description">Description:</label><br>
+    <label for="description" th:text="#{form.description}">Description:</label><br>
     <input type="text" id="description" name="description" th:value="*{description}"><br>
-    <label for="date">Due Date:</label><br>
+    <label for="date" th:text="#{form.dueDate}">Due Date:</label><br>
     <input type="datetime-local" id="date" name="dueDate" th:value="*{dueDate}"><br>
-    <input type="submit" value="Submit">
+    <input type="submit" th:value="#{editTask.button}">
 </form>
 </body>
 </html>
